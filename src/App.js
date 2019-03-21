@@ -73,7 +73,7 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <h1>To Do List</h1>
         <TodoList toDo={this.state.toDo} toggleItem={this.toggleItem}/>
         <TodoForm 
