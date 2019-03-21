@@ -61,6 +61,15 @@ class App extends React.Component {
 
     this.setState({toDo: newList});
   }
+
+  clearCompleted = (event) => {
+    event.preventDefault();
+    const itemsNotCompleted = this.state.toDo.filter(item => {
+      return item.completed === false;
+    })
+
+    this.setState({toDo: itemsNotCompleted});
+  }
   
   render() {
     return (
@@ -71,6 +80,7 @@ class App extends React.Component {
           newItem={this.state.newItem}
           updateNewItem={this.updateNewItem}
           addNewItem={this.addNewItem}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );
