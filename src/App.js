@@ -2,18 +2,20 @@ import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
+import './components/TodoComponents/Todo.css';
+
 const Todo = [
-      {
-      task: 'Create To Do List',
-      id: 'testid',
-      completed: false
-      },
-      {
-      task: 'Submit To Do List',
-      id: 'testid2',
-      completed: false
-      }
-  ];
+  {
+  task: 'Create To Do List',
+  id: 'testid',
+  completed: false
+  },
+  {
+  task: 'Submit To Do List',
+  id: 'testid2',
+  completed: false
+  }
+];
 
 class App extends React.Component {
   constructor() {
@@ -44,13 +46,32 @@ class App extends React.Component {
       newItem: ''
     });
   }
+
+  toggleItem = id => {
+    const newList = this.state.toDo.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          completed: !item.completed
+        };
+      } else {
+        return item;
+      }
+    })
+
+    this.setState({toDo: newList});
+  }
   
   render() {
     return (
       <div>
         <h1>To Do List</h1>
-        <TodoList toDo={this.state.toDo}/>
-        <TodoForm newItem={this.state.newItem} updateNewItem={this.updateNewItem} addNewItem={this.addNewItem}/>
+        <TodoList toDo={this.state.toDo} toggleItem={this.toggleItem}/>
+        <TodoForm 
+          newItem={this.state.newItem}
+          updateNewItem={this.updateNewItem}
+          addNewItem={this.addNewItem}
+        />
       </div>
     );
   }
