@@ -1,15 +1,9 @@
-const Todo = [
-    {
-    task: 'Create To Do List',
-    id: 'testid',
-    completed: 'false'
-    },
-    {
-    task: 'Submit To Do List',
-    id: 'testid2',
-    completed: 'false'
-    }
+import React from 'react';
 
-];
+function Todo(props) {
+    return (
+        <p>{props.task}</p>
+    );
+}
 
 export default Todo;

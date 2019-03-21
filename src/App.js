@@ -1,7 +1,19 @@
 import React from 'react';
-import Todo from './components/TodoComponents/Todo';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+
+const Todo = [
+      {
+      task: 'Create To Do List',
+      id: 'testid',
+      completed: false
+      },
+      {
+      task: 'Submit To Do List',
+      id: 'testid2',
+      completed: false
+      }
+  ];
 
 class App extends React.Component {
   constructor() {
@@ -23,7 +35,8 @@ class App extends React.Component {
     event.preventDefault();
     const newListItem = {
       task: this.state.newItem,
-      id: Date.now()
+      id: Date.now(),
+      completed: false
     };
 
     this.setState({
