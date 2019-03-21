@@ -1,17 +1,17 @@
 body {
-    background: lightgrey;
+    background: #F4F3F3;
     box-sizing: border-box;
 }
 
 .wrapper {
-    background: #83b799;
+    background: #D9E0E2;
     width: 600px;
     height: auto;
     margin: 100px 0;
     text-align: center;
     font-family: sans-serif;
     padding: 15px;
-    border: 10px solid #E86F68;
+    border: 10px solid #A4BCC4;
     border-radius: 5px;
 }
 
@@ -41,8 +41,7 @@ button {
     display: block;
     margin-top: 8px;
     padding: 8px;
-    background: #E4D8B4;
-    color: #272324;
+    background: #AAADAF;
     font-size: 1.2rem;
     border: none;
     border-radius: 5px;
@@ -50,6 +49,6 @@ button {
 }
 
 button:hover {
-    background: #E2CD6D;
+    background: #A4BCC4;
     transition: all 200ms ease;
 }
